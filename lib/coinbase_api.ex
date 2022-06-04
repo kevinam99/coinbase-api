@@ -3,13 +3,13 @@ defmodule CoinbaseApi do
   Documentation for `CoinbaseApi`.
   """
   # coinbase prod credentials
-  @api_key ""
-  @api_secret ""
+  @api_key Application.fetch_env!(:coinbase_api, :api_key)
+  @api_secret Application.fetch_env!(:coinbase_api, :api_secret)
   @url "https://api.coinbase.com"
   @env :prod
 
   @api_version "2019-11-15"
-  #@passphrase ""
+  #@passphrase Application.fetch_env!(:coinbase_api, :passphrase)
 
   def buy_and_send() do
     buy_crypto(0.0000000024, "btc", true)

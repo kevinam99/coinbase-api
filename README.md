@@ -4,7 +4,7 @@ Wrote up this client to interact with the Coinbase API. There are several functi
 
 PRs and issues to enhance or improve this project are always welcome! 🙌
 
-Make sure you have the relevant credentials for the relevant environment.
+Make sure you have the relevant credentials for the relevant environment. Add your credentials in [config/config.exs](./config/config.exs).
 
 Note that the docs are not fully clear and you may run into errors to setup using the API. They're not updated and the answers on StackOverflow are from an older version of the API.
 

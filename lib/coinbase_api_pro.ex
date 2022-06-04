@@ -3,15 +3,15 @@ defmodule CoinbaseApiPro do
   Documentation for `CoinbaseApiSandbox`.
   """
   # coinbase pro sandbox
-  @api_key ""
-  @api_secret ""
+  @api_key Application.fetch_env!(:coinbase_api, :sandbox_api_key)
+  @api_secret Application.fetch_env!(:coinbase_api, :sandbox_api_secret)
               |> Base.decode64!()
 
   @url "https://api.exchange.coinbase.com"
   @env :sandbox
 
   @api_version "2019-11-15"
-  @passphrase ""
+  @passphrase Application.fetch_env!(:coinbase_api, :passphrase)
 
   def get_account(symbol) do
     request_path = get_request_path(@env, "accounts")
