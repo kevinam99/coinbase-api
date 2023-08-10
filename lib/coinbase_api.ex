@@ -59,7 +59,7 @@ defmodule CoinbaseApi do
 
         res["data"]
         # |> Enum.map(fn account -> {account["currency"]["name"], account["currency"]["code"]} end)
-        |> Enum.filter(fn account -> account["name"] == "#{String.upcase(symbol)} Wallet" end)
+        |> Enum.filter(fn account -> String.upcase(symbol) == account["currency"]["code"] end)
         |> hd
 
       %HTTPoison.Response{status_code: status_code, body: body} ->
